@@ -1,13 +1,3 @@
-// Password generator
-// User 'click' the button
-// After 'click' the button series of prompts displays
-// User select which criteria to include
-// Prompts: length 8~128 characters
-// Prompts: lowercase, uppercase, numeric, and/or special characters
-// Input should be validated at least one character type selected
-// All prompts chosen password generated should match the selected criteria
-// Display as alert or written to the page
-
 
 // global var
 // array for: lowerCase, upperCase, number, and specialCharacters
@@ -19,15 +9,8 @@ var number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 var specialCharacters = ["!", "\"", "#", "$", "%", "&", "\'", "(", ")", "*", "+", ",",
 "-", ".", "/", "\\", ":", ";", "<", ">", "=", "?", "@", "[", "]", "^", "_", "`", "{", "}", "|", "~"]
 
-
-
-
-
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
-
-
 
 // Write password to the #password input
 function writePassword() {
@@ -35,34 +18,24 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
-}
-
+};
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 console.log(generateBtn);
 
-
-
 // must return a string value that is the password.
 function generatePassword(){
-
     var tempPassword = ''
     var possibleCharacters = [];
     var userSelLow = false;
     var userSelUpp = false;
     var userSelNum = false;
     var userSelSpC = false;
-
 // optional message, and to wait until the user dismisses the dialog.
   window.alert('User have four criteria options and must select at least one of the criterias');
-
-
-
 // In JavaScript NaN is short for "Not-a-Number".
 // The isNaN() method returns true if a value is NaN.
 // The isNaN() method converts the value to a number before testing it.
-   
   // Prompt user to choose num btwn 8 and 128 (display a dialog with an optional message prompting the user to input some text, and to wait until the user either submits the text or cancels the dialog.)
   // make  sure user enters a number
   var confirmLength = prompt('How long of characters should your password be? Choose between 8 - 128');
@@ -95,32 +68,22 @@ function generatePassword(){
   if(userSelNum) {
     possibleCharacters.push(...number)
     console.log(possibleCharacters)
-  }
- 
-  
+  } 
   if (!userSelLow && !userSelNum && !userSelNum && !userSelSpC ){
-    alert('User must select at least one of the criteria!')
-    
+    alert('User must select at least one of the criteria!')   
     return;
   }
-
   for (var i = 0; i < confirmLength; i++) {
     var randomCharacter = possibleCharacters[Math.floor(Math.random()*possibleCharacters.length)] 
     tempPassword += randomCharacter;
   }
    //based on user answers add characters to possible char array
 
-  console.log(tempPassword)
- 
+  console.log(tempPassword);
   return tempPassword;
-
-
-
-
     //  var to save length
     //  validate user num 
-  // confirm user upper, lower, num, special characters ( 4 confirm prompts)
-    
+  // confirm user upper, lower, num, special characters ( 4 confirm prompts) 
     // 4 vars to save T/F to included characters
     // Validate that atleast one cat was chosen
   // Vars that include all user options of each category. Array of string for each cat.
@@ -130,8 +93,6 @@ function generatePassword(){
   //
   // Join chosen elements into a string
   // return passwordString; 
-
-
 };
 
 
