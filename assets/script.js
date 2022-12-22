@@ -19,13 +19,8 @@ var number = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 var specialCharacters = ["!", "\"", "#", "$", "%", "&", "\'", "(", ")", "*", "+", ",",
 "-", ".", "/", "\\", ":", ";", "<", ">", "=", "?", "@", "[", "]", "^", "_", "`", "{", "}", "|", "~"]
 
-var possibleCharacters = [];
 
 
-var userSelLow = false;
-var userSelUpp = false;
-var userSelNum = false;
-var userSelSpC = false;
 
 
 // Assignment Code
@@ -52,34 +47,72 @@ console.log(generateBtn);
 // must return a string value that is the password.
 function generatePassword(){
 
+    var tempPassword = ''
+    var possibleCharacters = [];
+    var userSelLow = false;
+    var userSelUpp = false;
+    var userSelNum = false;
+    var userSelSpC = false;
+
+// optional message, and to wait until the user dismisses the dialog.
+  window.alert('User have four criteria options and must select at least one of the criterias');
+
+
+
 // In JavaScript NaN is short for "Not-a-Number".
 // The isNaN() method returns true if a value is NaN.
 // The isNaN() method converts the value to a number before testing it.
    
   // Prompt user to choose num btwn 8 and 128 (display a dialog with an optional message prompting the user to input some text, and to wait until the user either submits the text or cancels the dialog.)
   // make  sure user enters a number
-var confirmLength = prompt('How long of characters should your password be? Choose between 8 - 128');
+  var confirmLength = prompt('How long of characters should your password be? Choose between 8 - 128');
   // make sure user entered a number between 8 -128
-if (isNan(parseInt(confirmLength) || confirmLength < 8 || confirmLength > 128)) {
+  console.log(confirmLength)
+  if (isNaN(parseInt(confirmLength)) || confirmLength < 8 || confirmLength > 128) {
     alert ('Please choose your password length between 8 - 128')
-} 
+   return;
+  } 
   // does user want lowercase letters
   userSelLow = confirm ('Should your password contain lowercase?')
-  if(userSelLow === 'true') {
-  possibleCharacters.push(...lowerCase)
+  if(userSelLow) {
+    possibleCharacters.push(...lowerCase)
+    console.log(possibleCharacters)
   }
   // uppercase
   userSelUpp = confirm ('Should your passoword contain uppercase?')
-
+  if(userSelUpp) {
+    possibleCharacters.push(...upperCase)
+    console.log(possibleCharacters)
+  }
   //special
   userSelSpC = confirm ('Should your password contain Special Chracters?')
-
+  if(userSelSpC) {
+    possibleCharacters.push(...specialCharacters)
+    console.log(possibleCharacters)
+  }
   // numbers
   userSelNum = confirm ('Should your password contain numbers?')
+  if(userSelNum) {
+    possibleCharacters.push(...number)
+    console.log(possibleCharacters)
+  }
+ 
+  
+  if (!userSelLow && !userSelNum && !userSelNum && !userSelSpC ){
+    alert('User must select at least one of the criteria!')
+    
+    return;
+  }
 
-  //based on user answers add characters to possible char array
+  for (var i = 0; i < confirmLength; i++) {
+    var randomCharacter = possibleCharacters[Math.floor(Math.random()*possibleCharacters.length)] 
+    tempPassword += randomCharacter;
+  }
+   //based on user answers add characters to possible char array
 
-
+  console.log(tempPassword)
+ 
+  return tempPassword;
 
 
 
@@ -101,37 +134,6 @@ if (isNan(parseInt(confirmLength) || confirmLength < 8 || confirmLength > 128)) 
 
 };
 
-// must return a string value that is the password.
-function generatePassword(){
-
-  // optional message, and to wait until the user dismisses the dialog.
-  window.alert('User have four criteria options and must select at least one of the criterias');
-  
-  // Prompt user to choose num btwn 8 and 128 (display a dialog with an optional message prompting the user to input some text, and to wait until the user either submits the text or cancels the dialog.)
-  // make  sure user enters a number
-  confirmLength = prompt('How long of characters should your password be? Choose between 8 - 128')
-  parseInt(confirmLength) > 8 && parseInt (confirmLength) <128;
-
-  // make sure user entered a number between 8 -128
-  
-
-  // does user want lowercase letters
-  userSelLow = confirm ('Should your password contain lowercase?')
-  if(userSelLow === 'true') {
-  possibleCharacters.push(...lowerCase)
-  }
-  // uppercase
-  userSelUpp = confirm ('Should your passoword contain uppercase?')
-
-  //special
-  userSelSpC = confirm ('Should your password contain Special Chracters?')
-
-  // numbers
-  userSelNum = confirm ('Should your password contain numbers?')
-
-  //based on user answers add characters to possible char array
-
-
 
 
 
@@ -151,7 +153,7 @@ function generatePassword(){
   // return passwordString; 
 
 
-};
+// }
 
 
 
