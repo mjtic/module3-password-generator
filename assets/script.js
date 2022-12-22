@@ -10,11 +10,11 @@ var specialCharacters = ["!", "\"", "#", "$", "%", "&", "\'", "(", ")", "*", "+"
 
 var possibleCharacters = [];
 
+
 var userSelLow = false;
 var userSelUpp = false;
 var userSelNum = false;
 var userSelSpC = false;
-
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
@@ -31,12 +31,13 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+// must return a string value that is the password.
 function generatePassword(){
 
- // optional message, and to wait until the user dismisses the dialog.
- window.alert('User have four criteria options and must select at least one of the criterias'); 
-
-// Prompt user to choose num btwn 8 and 128 (display a dialog with an optional message prompting the user to input some text, and to wait until the user either submits the text or cancels the dialog.)
+  // optional message, and to wait until the user dismisses the dialog.
+  window.alert('User have four criteria options and must select at least one of the criterias');
+  
+  // Prompt user to choose num btwn 8 and 128 (display a dialog with an optional message prompting the user to input some text, and to wait until the user either submits the text or cancels the dialog.)
   // make  sure user enters a number
   confirmLength = prompt('How long of characters should your password be? Choose between 8 - 128')
   parseInt(confirmLength) > 8 && parseInt (confirmLength) <128;
@@ -65,13 +66,10 @@ function generatePassword(){
 
 
 
-
-
-  // must return a string value that is the password.
-  // Prompt user to choose num btwn 8 and 128
     //  var to save length
     //  validate user num 
   // confirm user upper, lower, num, special characters ( 4 confirm prompts)
+    
     // 4 vars to save T/F to included characters
     // Validate that atleast one cat was chosen
   // Vars that include all user options of each category. Array of string for each cat.
@@ -80,7 +78,12 @@ function generatePassword(){
     // How to decide how many elements to choose from each array
   //
   // Join chosen elements into a string
-  //return passwordString; 
+  // return passwordString; 
 
 
 };
+
+
+
+
+
