@@ -16,8 +16,8 @@ This is a random password generator that could strenghten your password security
 
 ## Usage
 - Github page (https://github.com/mjtic/module2-portfolio/)
-- URL (https://mjtic.github.io/module2-password-generator/)
-<br>
+- URL (https://mjtic.github.io/password-generator/)
+![03-javascript-homework-demo](https://user-images.githubusercontent.com/114535797/226936746-48b9001a-dc12-4779-9637-a90d0cad8a6b.png)<br>
 To create a new, secure password,
 please, click the button to generate a password,
 User is presented with a series of prompts for password criteria,
