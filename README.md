@@ -1,14 +1,7 @@
-# module3-password-generator
-# 03 JavaScript: Password Generator for UT-Austin bootcamp
-
+# Password-generator
 
 ## Description:
-This was a scenerio an employer requesting a random password generator that could strenghten their password security.
-
-AS AN employee with access to sensitive data
-I WANT to randomly generate a password that meets certain criteria
-SO THAT I can create a strong password that provides greater security
-
+This is a random password generator that could strenghten your password security.
 
 ## Table of Contents
 
